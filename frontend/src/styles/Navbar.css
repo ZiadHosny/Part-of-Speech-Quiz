@@ -1,0 +1,33 @@
+header {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #0a0a23;
+}
+
+.homepage-navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.website-logo {
+    display: flex;
+    width: auto;
+    height: 35px;
+    margin: 7px 0;
+}
+
+
+@media screen and (max-width: 590px) {
+    .homepage-navbar {
+        display: block;
+    }
+
+}
