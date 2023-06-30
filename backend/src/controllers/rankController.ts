@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { getDataFromfile } from "../utils/getDataFromfile.ts"
+import { getDataFromfile } from "../utils/getDataFromfile.js"
 
 export const rankController = (req: Request, res: Response) => {
 

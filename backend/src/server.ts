@@ -1,9 +1,9 @@
 import express from 'express'
 import cors from 'cors'
-import { getFromEnv } from './utils/getFromEnv.ts'
-import wordsRouter from './routes/wordsRouter.ts'
-import rankRouter from './routes/rankRouter.ts'
-import helloRouter from './routes/helloRouter.ts'
+import { getFromEnv } from './utils/getFromEnv.js'
+import wordsRouter from './routes/wordsRouter.js'
+import rankRouter from './routes/rankRouter.js'
+import helloRouter from './routes/helloRouter.js'
 
 const { port } = getFromEnv()
 const app = express()

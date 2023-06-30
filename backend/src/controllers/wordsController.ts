@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
-import { Word } from "../types.ts"
-import { getDataFromfile } from "../utils/getDataFromfile.ts"
-import { shuffleList } from "../utils/shuffleList.ts"
+import { Word } from "../types.js"
+import { getDataFromfile } from "../utils/getDataFromfile.js"
+import { shuffleList } from "../utils/shuffleList.js"
 
 export const wordsController = (req: Request, res: Response) => {
 

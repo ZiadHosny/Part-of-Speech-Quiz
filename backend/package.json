@@ -5,9 +5,9 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "node --esm dist/server.js",
-    "dev": "nodemon --esm src/server.ts",
-    "build": "tsc -p ."
+    "start": "tsc && node dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",

@@ -1,5 +1,5 @@
 import express from "express"
-import { rankController } from "../controllers/rankController.ts"
+import { rankController } from "../controllers/rankController.js"
 
 const router = express.Router()
 
