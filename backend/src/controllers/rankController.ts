@@ -5,12 +5,12 @@ export const rankController = (req: Request, res: Response) => {
 
     const { score } = req.body
 
+    // GET scoresList Array from TestData File 
     const data = getDataFromfile('../data/TestData.json', import.meta.url)
-
     const { scoresList } = data;
 
+    // GET number of Scores that smaller than user Score 
     let userScoreInList = 0
-
     scoresList.forEach((scoreFromList: number) => {
 
         if (scoreFromList < score) {

@@ -5,18 +5,18 @@ import { shuffleList } from "../utils/shuffleList.js"
 
 export const wordsController = (req: Request, res: Response) => {
 
+    // GET wordList Array from TestData File
     const data = getDataFromfile('../data/TestData.json', import.meta.url)
+    const { wordList } = data;
 
-    const { wordList, scoresList } = data;
-
-    console.log(scoresList.length)
-
+    // Shuffle The wordList
     const shuffledwordList = shuffleList([...wordList])
 
     let adverb = {}, noun = {}, adjective = {}, verb = {}
-
     const others: Word[] = [];
 
+
+    // GET at least 1 adjective, 1 adverb, 1 noun, and 1 verb and 6 mixes in others variable.
     shuffledwordList.forEach((e) => {
 
         if (Object.keys(adverb).length === 0 && e.pos === 'adverb') {
@@ -33,6 +33,7 @@ export const wordsController = (req: Request, res: Response) => {
 
     })
 
+    // Shuffle The Result of the 10 words
     const word10 = shuffleList([...others, adjective, adverb, verb, noun])
 
     res.json(word10)
