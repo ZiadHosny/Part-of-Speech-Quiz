@@ -30,7 +30,7 @@ npm install
 
 ```
 
-to start the backend project
+to start the backend project (in this Link http://localhost:5000/)
 ```bash
 
 # to start server use
@@ -45,7 +45,7 @@ npm run build
 
 ```
 
-to start the frontend project
+to start the frontend project (in this Link http://localhost:3000/)
 ```bash
 
 # to start server use
