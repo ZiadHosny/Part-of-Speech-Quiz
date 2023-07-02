@@ -1,11 +1,23 @@
 # Part of Speech Quiz
 
+![home Screen](home.png)
+
 In English language, words can be categorized according to their syntactic functions, which is known as "Part of Speech".
 Examples of part of speech: (noun, verb, adjective, ...)
 
 Check this [link](https://en.wikipedia.org/wiki/Part_of_speech) for more information.
 
 **Part of Speech Quiz** is an activity using React.js, node.js, and Express.js that helps the students practice categorizing a set of words according to their part of speech.
+
+## How to Use The App
+
+start the test with 10 question you must select one answer from 4 answers adverb, verb, noun and adjective and you will get if the answer is right or not after that you must click next to get next question
+
+![quizApp](wrongAnswer.png)
+
+after finish all 10 Question will got the new rank
+
+![result](result.png)
 
 ## How to run the project locally
 
