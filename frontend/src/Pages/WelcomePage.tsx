@@ -11,7 +11,7 @@ export const WelcomePage = () => {
                 <img src={idea} />
             </div>
             <button onClick={() => navigate('/questions')} className='goToQuiz'  >
-                go To Take a Quiz
+                Go Take a Quiz
             </button>
         </div >
     )
