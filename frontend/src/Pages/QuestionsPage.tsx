@@ -61,7 +61,6 @@ const Questions = () => {
                                                         setDisabledButton(true)
                                                         setSelectedAnswer(answer)
                                                         if (currentQuestion?.rightAnswer === answer) {
-                                                            console.log('ddddddddd', rightAnswers)
                                                             setRightAnswers(rightAnswers + 1)
                                                         }
                                                     }
