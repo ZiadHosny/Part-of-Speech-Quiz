@@ -7,23 +7,23 @@ import { Loading } from "../components/Loading";
 
 const Questions = () => {
 
-
     const { value: questionsList, loading: questionsLoading } = useQuestionsList()
-    const [{ loading: rankLoading }, RankFn] = useRank()
+    const [{ loading: rankLoading }, rankFn] = useRank()
     const [questionIndex, setQuestionIndex] = useState(0)
     const [rightAnswers, setRightAnswers] = useState(0)
     const [disabledButton, setDisabledButton] = useState(false)
     const [selectedAnswer, setSelectedAnswer] = useState('')
-
     const currentQuestion = questionsList?.[questionIndex]
     const rightAnswer = currentQuestion?.rightAnswer;
     const isRightAnswer = selectedAnswer === rightAnswer
+    const questionsLength = questionsList?.length ?? 0
+    const isLastQuestion = currentQuestion?.questionNumber === questionsLength
 
     const nextBtn = () => {
 
-        if (questionsList && questionIndex >= questionsList.length - 1) {
-            const score = rightAnswers / questionsList.length * 100
-            RankFn(score)
+        if (questionsList && questionIndex >= questionsLength - 1) {
+            const score = rightAnswers / questionsLength * 100
+            rankFn(score)
         }
         setSelectedAnswer('')
         setDisabledButton(false)
@@ -34,14 +34,11 @@ const Questions = () => {
         <>
             {questionsLoading || rankLoading ?
                 <Loading /> : currentQuestion ?
-
                     <>
-                        <div className="progress-Container">
-                            <ProgressBar
-                                value={`${((currentQuestion.questionNumber) / questionsList.length) * 100}`}
-                                questionOfLength={`${currentQuestion.questionNumber}/${questionsList.length}`}
-                            />
-                        </div>
+                        <ProgressBar
+                            questionNumber={currentQuestion.questionNumber}
+                            questionsLength={questionsLength}
+                        />
                         <h1>Question {currentQuestion.questionNumber}</h1>
                         <div className="quiz-div">
                             <div className="quiz-answers-div">
@@ -87,7 +84,7 @@ const Questions = () => {
                                             }
                                         </div>
                                         <button className="next-btn" onClick={nextBtn}>
-                                            Next
+                                            {isLastQuestion ? "Get Your Rank" : "Next"}
                                         </button>
                                     </div>
                                     :
